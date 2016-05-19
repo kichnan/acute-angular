@@ -1,13 +1,23 @@
+//import core components
 import {Component} from 'angular2/core';
+import {OnInit} from 'angular2/core';
+
+//import models
 import {ValueItem} from './value-item';
 import {ValueList} from './value-list';
+
+//import components
 import {ListViewComponent} from './list-view.component';
 
+//import services
+import {ValueListService} from './value-list.service';
 
 
+//define base component for your application
 @Component({
     selector: 'tmapp',
     template: `
+    <div *ngIf="tmDropDownList">
     <h1>
         <img src="{{logo}}" height="24" />
         {{tmDropDownList.name}} Dropdown list editor
@@ -27,35 +37,40 @@ import {ListViewComponent} from './list-view.component';
             <input type="submit" value="Save" (click)="onSave()" />
         </div>
     </div>
+    </div>
     `,
-    directives: [ListViewComponent]
+    directives: [ListViewComponent],
+    providers: [ValueListService]
 })
 
-export class AppComponent {
-    logo = "http://www.tailorednews.com/Test/tmailLogo_new_small_0.jpg";
-    tmDropDownList = TMDropDownList;
+
+//define main Components class, properties and functions
+export class AppComponent implements OnInit {
+    logo = "https://assets-cdn.github.com/images/modules/logos_page/Octocat.png";
+    tmDropDownList: ValueList;
     selectedListItem: ValueItem;
     
+    //constructors and implemented functions
+    constructor(private valueListSvc: ValueListService) { }
+    
+    ngOnInit() {
+        this.getValueList();
+    }
+    
+    
+    //service getters
+    getValueList() {
+        this.valueListSvc.getValueList().then(myList => this.tmDropDownList = myList);
+    }
+    
+    
+    //events
     onSelect(item: ValueItem) {
         this.selectedListItem = item;
     }
+    
     onSave(item: ValueItem) {
         console.log(item);
         console.log(this.selectedListItem);
     }
 }
-
-var TMDropDownList: ValueList;
-
-(function () {
-    var listItems: ValueItem[] = [];
-    for (var i: number = 0; i < 10; i++) {
-        listItems.push({"value": "val" + i, "display": "disp" + i, "active": 0});
-    }
-    var ddls: ValueList = {
-        name: "Value_list_1",
-        filterIdentity: 10,
-        items: listItems
-    };
-    TMDropDownList = ddls;
-})();
