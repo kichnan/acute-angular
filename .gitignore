@@ -7,6 +7,7 @@ node_modules
 .sass-cache
 .jekyll-metadata
 _site/
+_drafts/things-to-do.markdown
 Gemfile.lock
 
 # Special post specific files to be excluded
