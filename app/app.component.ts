@@ -60,7 +60,7 @@ export class AppComponent implements OnInit {
     
     //service getters
     getValueList() {
-        this.valueListSvc.getValueList().then(myList => this.tmDropDownList = myList);
+        this.valueListSvc.getValueListDelayed().then(myList => this.tmDropDownList = myList);
     }
     
     

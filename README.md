@@ -1,6 +1,9 @@
 # acute-angular
 Home projects based on Angular JS framework
 
+## Pending setup tasks
+- [ ] Check code comments standards for this project
+
 ## New learnings
 - [ ] What is `@`Component
 - [ ] What is Decorator
