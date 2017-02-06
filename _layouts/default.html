@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+{% include head.html %}
+
+<body>
+  {% include page-header.html %}
+
+  <div class="grid" id="searchBar">
+    <div id="search">
+      <form role="search" method="get" action="{{ site.baseurl }}/search/">
+        <input id="searchString" name="searchString" placeholder="Search me" type="text">
+        <input id="searchButton" name="googleSearchName" type="submit" value="Search">
+      </form>
+    </div>
+  <div>
+
+  <section class="main-content">
+    {{ content }} {% include page-footer.html %}
+  </section>
+
+  {% include analytics.html %}
+
+</body>
+
+</html>
