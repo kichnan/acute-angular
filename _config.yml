@@ -16,9 +16,7 @@
 title: Acute Angular
 email: i@krishnanmk.com
 description: > # this means to ignore newlines until "baseurl:"
-  Yet another Angular 2 (ngx) blog to share those minute details, hickups
-  and experiences one may encounter when developing a brand new application
-  in Angular.
+  An Angular blog focusing on the minute issues first
 baseurl: "/acute-angular" # the subpath of your site, e.g. /blog
 url: "http://kichnan.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 port: 4003

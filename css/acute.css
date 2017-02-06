@@ -1,0 +1,7 @@
+input.gsc-input {
+    width: 200px !important;
+}
+
+table.gsc-search-box td.gsc-input {
+    text-align: right;
+}
