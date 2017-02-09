@@ -21,8 +21,9 @@ The reason this happens is if the code you downloaded or setup contained pre-exi
 Node version or in a different operating system environment than yours.
 
 The fix is simple:
-- Delete node_modules folder
-- `npm install` again
+
+* Delete node_modules folder
+* `npm install` again
 
 
 [Node]: https://nodejs.org/en/
