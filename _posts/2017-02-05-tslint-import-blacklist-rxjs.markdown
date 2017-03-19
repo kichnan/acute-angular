@@ -7,7 +7,7 @@ categories: tslint rxjs
 ---
 
 In your Angular 2 application, after upgrading your TSLint package manually, or upgrading your application
-to [angular-cli][1] `1.0.0-beta.26`, TSLint may have started throwing new errors.
+to [angular-cli][1] `1.0.0-beta.26` or above, TSLint may have started throwing new errors.
 
 For import statements like the following in, say, your.component.ts:
 
